@@ -22,7 +22,7 @@ function NavigateButton({ to, text, className, icon, open }: NavigateButtonProps
     }
 
     return (
-        <button onClick={handleClick} className={`nav-button flex items-center ${className}`}>
+        <button onClick={handleClick} className={`nav-button flex items-center cursor-pointer ${className}`}>
             <Icon icon={icon} className="mr-1" /> {text}
         </button>
     );
