@@ -11,7 +11,6 @@ function App() {
     <div className='w-screen h-screen flex justify-center items-center'>
       <div className="m-8">
         <div className="flex text-center justify-center min-w-90 max-w-160 flex-col items-center">
-          <code>*страница создана с  использованием react*</code>
           <Name/>
           {/* <LanguageButton/> */}
         </div>

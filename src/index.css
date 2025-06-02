@@ -2,114 +2,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
-.almendra {
-  font-family: "Almendra", serif;
-  color: var(--c-text-dark);
-  opacity: 90%;
-}
-
-:root {
-  --c-text-dark: #e1e9ffe3;
-  --c-dark: lch(from var(--c-bg-dark) calc(l + 4.5) c h);
-  --c-bg-dark: var(--color-slate-900);
-  --c-bg-light: var(--color-slate-200);
-  --c-animation: var(--color-slate-800);
-  --c-animation-2: var(--color-slate-700)
-}
 :root {
   line-height: 1.5;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
   color-scheme: light dark;
   color: var(--c-text-dark);
-
-  background:
-  radial-gradient(circle at top,var(--c-bg-dark),var(--c-animation),var(--c-animation-2), transparent);
-  animation: pulse-bg 20s ease-in-out infinite;
-  background-size: 150%;
+  background-color: var(--c-primary);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-@keyframes pulse-bg {
-  0% {
-    background-size: 100% 100%;
-  }
-  50% {
-    background-size: 150% 150%;
-  }
-  100% {
-    background-size: 100% 100%;
-  }
-}
 * {
-  transition: 0.3s;
-  
+  transition: 0.2s;
 }
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
-
 }
-
 h1 {
-  font-size: 2.2em;
-  line-height: 1.1;
   font-weight: 700;
 }
-h2 {
-  font-size: 1.4em;
-  line-height: 1.1;
-  font-weight: 700;
-}
-
-
 .container {
-  background-color: color-mix(in srgb, var(--color-slate-500) 12%, transparent);
-  border: solid 1px #ffffff0b;
-
+  background-color: var(--c-secondary);
+  backdrop-filter: blur(50%);
 }
-
 .nav-button {
-  background-color: color-mix(in srgb, var(--color-slate-500) 12%, transparent);
-  padding: 0.5em;
-  border-radius: 2rem;
-  min-width: 5rem;
-  border: solid 1px #ffffff0b;
-  font-weight: 500;
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
+  background-color: var(--c-secondary);
 }
 .nav-button:hover {
-  background-color: color-mix(in srgb, var(--color-slate-500) 30%, transparent);
+  background-color: var(--c-secondary-hover);
 }
 
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
-
-@media (prefers-color-scheme: light) {
+@media (max-width: 600px) {
   :root {
-    color: #213547;
-    background-color: var(--c-bg-light);
+    font-weight: 450;
   }
-  a:hover {
-    color: #747bff;
+  .nav-button {
+    font-weight: 450;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  
 }
