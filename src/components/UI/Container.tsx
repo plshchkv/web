@@ -5,7 +5,7 @@ type ContainerProps = {
 
 function Container({ children, className }: ContainerProps) {
     return(
-        <div className={`min-h-24 rounded-3xl p-4 flex flex-wrap border border-[#ffffff0b] container ${className ? ` ${className}` : ''}`}>
+        <div className={`backdrop-blur-sm bg-(--c-secondary) min-h-24 rounded-3xl p-4 flex flex-wrap border border-[#ffffff0b] container ${className ? ` ${className}` : ''}`}>
             {children}
         </div>
     )

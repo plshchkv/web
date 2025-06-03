@@ -1,9 +1,9 @@
 :root {
-    --c-primary: var(--color-slate-900);
-    --c-text-dark: #e1e9ffe3;
+    --c-primary: hsl(120, 14%, 10%);
+    --c-text-dark: color-mix(in srgb, var(--c-primary) 20%, white);
     --c-background: radial-gradient(circle at center,color-mix(in srgb, var(--c-primary) 95%, white), transparent);
-    --c-secondary: color-mix(in srgb, color-mix(in srgb, var(--c-primary) 92%, white) 92%, transparent);
-    --c-secondary-hover: color-mix(in srgb, color-mix(in srgb, var(--c-primary) 89%, white) 92%, transparent);
+    --c-secondary: color-mix(in srgb, color-mix(in srgb, var(--c-primary) 92%, white) 30%, transparent);
+    --c-secondary-hover: color-mix(in srgb, color-mix(in srgb, var(--c-primary) 92%, white) 90%, transparent);
 }
 
 
