@@ -20,10 +20,10 @@ function App() {
           <p className="flex justify-center">{t('description')}</p>
           
         </Container>
-        <div className="flex justify-between mt-4">
+        <div className="flex justify-between mt-4 flex-wrap">
           <NavigateButton className="" icon="simple-icons:github" text="GitHub" open="https://github.com/plshchkv"/>
           <NavigateButton className="" icon="" text={t('schedule')} to="/Расписание"/>
-          <ToggleButton icon="mdi:color">
+          <ToggleButton icon="" text="Сменить цвет">
             <HueAdjuster />
           </ToggleButton>
           <NavigateButton className="" icon="simple-icons:telegram" text="Telegram" open="https://t.me/plshchkvv"/>

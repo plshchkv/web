@@ -1,5 +1,5 @@
 :root {
-    --c-primary: hsl(120, 14%, 10%);
+    --c-primary: hsl(120, 10%, 21%);
     --c-text-dark: color-mix(in srgb, var(--c-primary) 20%, white);
     --c-background: radial-gradient(circle at center,color-mix(in srgb, var(--c-primary) 95%, white), transparent);
     --c-secondary: color-mix(in srgb, color-mix(in srgb, var(--c-primary) 92%, white) 30%, transparent);

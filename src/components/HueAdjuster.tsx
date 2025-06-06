@@ -32,9 +32,9 @@ const HueAdjuster: React.FC = () => {
   }, [hue]);
 
   return (
-    <div>
+    <div className='flex w-full justify-center'>
         <input
-          className="accent-current absolute"
+          className="accent-(--c-secondary)"
           type="range"
           min={0}
           max={359}

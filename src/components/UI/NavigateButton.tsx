@@ -22,7 +22,7 @@ function NavigateButton({ to, text, className, icon, open }: NavigateButtonProps
     }
 
     return (
-        <button onClick={handleClick} className={`hover:bg-(--c-secondary-hover) backdrop-blur-sm bg-(--c-secondary) nav-button flex items-center cursor-pointer justify-center text-base font-medium border border-[#ffffff0b] min-w-min rounded-4xl p-2  ${className}`}>
+        <button onClick={handleClick} className={`hover:bg-(--c-secondary-hover) self-start backdrop-blur-sm bg-(--c-secondary) nav-button flex items-center cursor-pointer justify-center text-base font-medium border border-[#ffffff0b] min-w-min rounded-4xl p-2  ${className}`}>
             <Icon icon={icon} className="mr-1" /> {text}
         </button>
     );
