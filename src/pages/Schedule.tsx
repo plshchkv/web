@@ -2,14 +2,12 @@
 // import data from '../../server/output.json'
 // import HeadTitle from "../components/UI/HeadTitle"
 import Container from "../components/UI/Container"
-import NavigateButton from "../components/UI/NavigateButton"
 
 function Schedule() {
   return (
       <div className="w-screen h-screen flex items-center justify-center">
         <Container className="flex flex-col items-center justify-center w-auto h-auto">
           <p>Временно заброшено</p>
-          <NavigateButton to="/" text="Назад" icon="" className="w-full mt-2"/>
         </Container>
       </div>
     // <div className='w-screen flex-col flex pr-16 pl-16 pt-4'>
