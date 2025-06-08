@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import '../src/root.css'
-import App from './pages/App'
+import MainPage from './pages/MainPage'
 import Schedule from './pages/Schedule'
 import NotFound from './pages/NotFound'
 
@@ -16,7 +16,7 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <MainPage/>,
   },
   {
     path: "/Расписание",
