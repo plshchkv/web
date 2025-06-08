@@ -14,6 +14,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+::selection {
+  background-color: #0000002d;
+}
+
 * {
   transition: 0.2s;
 }
@@ -26,18 +31,7 @@ body {
 h1 {
   font-weight: 700;
 }
-@media (max-width: 600px) {
-  :root {
-    font-weight: 450;
-  }
-  .nav-button {
-    font-weight: 450;
-  }
-}
 
-@media (min-width: 601px) and (max-width: 1024px) {
-  
-}
 
 input[type="range"] {
   -webkit-appearance: none;
@@ -66,4 +60,14 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 1rem;
   height: 1rem;
   width: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-weight: 450;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  
 }
