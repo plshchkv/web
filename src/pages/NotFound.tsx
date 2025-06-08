@@ -1,14 +1,16 @@
-import NavigateButton from "../components/UI/NavigateButton"
+import Container from "../components/UI/Container"
+import Header from "../components/Header"
+
 
 function NotFound() {
     return(
-        <div className="flex flex-col justify-center w-screen h-screen items-center">
-            <div className="flex flex-col justify-center items-center text-center">            
-                <h1 className="">Ошибка 404</h1>
-                <h1 className="">Этой страницы не существует</h1>
-                <NavigateButton to="/" text="Вернутся на главную" className="m-2" icon=""/>
-            </div>            
-        </div>
+    <div className="w-screen h-screen flex items-center justify-center">
+        <Header/>
+        <Container className="flex flex-col items-center justify-center w-auto h-auto">
+          <h1 className="text-4xl">404</h1>
+          <p>Страница не найдена</p>
+        </Container>
+      </div>
     ) 
 }
 
