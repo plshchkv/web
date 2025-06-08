@@ -42,9 +42,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             transition={{ duration: 0.1 }}
             className={`absolute top-full mt-2 z-10 ${getAlignmentClass(align)}`}
           >
-            <div
-              className={`flex justify-center w-full p-2 bg-[var(--c-secondary)] rounded-xl shadow-cian-500/50 border-[#ffffff0b] ${dropdownClassName}`}
-            >
+            <div className={`flex justify-center w-full p-2 bg-[var(--c-secondary)] rounded-xl shadow-cian-500/50 border-[#ffffff0b] ${dropdownClassName}`}>
               {children}
             </div>
           </motion.div>
