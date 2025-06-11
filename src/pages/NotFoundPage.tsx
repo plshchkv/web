@@ -12,8 +12,8 @@ function NotFound() {
         <Meta 
           title="404"
           description={t('notfound')} 
-          iconPrefix="material-icon-theme"
-          iconName="folder-error-open"
+          iconPrefix="icon-park-twotone"
+          iconName="error"
         />
         <Header/>
         <Container className="flex flex-col items-center justify-center w-auto h-auto">

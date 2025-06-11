@@ -1,11 +1,13 @@
+import { useEffect } from "react";
 import { useLocation } from "react-router";
 
 type MetaProps = {
   title?: string;
   description: string;
-  image?: string; // прямой путь к изображению
-  iconPrefix?: string; // iconify: logos
-  iconName?: string;   // iconify: github-icon
+  image?: string;
+  iconPrefix?: string;
+  iconName?: string;
+  iconColorVar?: string; 
 };
 
 const Meta = ({
@@ -14,13 +16,47 @@ const Meta = ({
   image,
   iconPrefix,
   iconName,
+  iconColorVar = "--c-icon",
 }: MetaProps) => {
   const location = useLocation();
   const fullTitle = title ? `plshchkv | ${title}` : "plshchkv";
   const baseUrl = "http://plshchkv.ru";
   const fullUrl = `${baseUrl}${location.pathname}`;
 
-  // Используемый URL для картинки и favicon
+  function getCSSVar(name: string): string {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  // Генерация favicon из Iconify
+  useEffect(() => {
+    async function setFaviconFromIconifyURL() {
+      if (!iconPrefix || !iconName) return;
+
+      const icon = `${iconPrefix}:${iconName}`;
+      const res = await fetch(`https://api.iconify.design/${icon}.svg`);
+      if (!res.ok) return;
+
+      let svgText = await res.text();
+      const iconColor = getCSSVar(iconColorVar) || "#00ffff";
+
+      svgText = svgText.replace(/fill=".*?"/g, `fill="${iconColor}"`);
+
+      const blob = new Blob([svgText], { type: "image/svg+xml" });
+      const url = URL.createObjectURL(blob);
+
+      let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+      if (!link) {
+        link = document.createElement("link");
+        link.rel = "icon";
+        document.head.appendChild(link);
+      }
+
+      link.href = url;
+    }
+
+    setFaviconFromIconifyURL();
+  }, [iconPrefix, iconName, iconColorVar]);
+
   const resolvedImage = image
     ? image
     : iconPrefix && iconName
