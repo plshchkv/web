@@ -12,7 +12,7 @@ interface HeaderProps {
 function Header({name = "yes"}: HeaderProps) {
     const [hue, setHue] = useHue();
     return(
-        <div className="absolute top-0 w-3/4 max-sm:w-full justify-between h-12 flex items-center pl-8 pr-8 pt-2">
+        <div className="absolute top-0 w-3/4 max-xl:w-4/4 justify-between h-12 flex items-center pl-8 pr-8 pt-2">
             <div className="flex">
                 <Dropdown
                     align="start"
