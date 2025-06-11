@@ -3,7 +3,7 @@ import { useHue } from "../hooks/useHue"
 import HueAdjuster from "./HueAdjuster";
 import Button from "./UI/Button";
 import Navigate from "./UI/Navigate";
-import LanguageButton from "./UI/LanguageButton";
+import LanguageButton from "./LanguageButton";
 
 interface HeaderProps {
     name?: "yes" | "no";
