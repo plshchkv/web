@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import '../src/root.css'
 import MainPage from './pages/MainPage'
-import Schedule from './pages/Schedule'
 import NotFound from './pages/NotFound'
 
 import './i18n'
@@ -17,14 +16,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainPage/>,
-  },
-  {
-    path: "/Расписание",
-    element: <Schedule/>
-  },
-  {
-    path: "/Schedule",
-    element: <Schedule/>
   },
   {
     path: "/*",
