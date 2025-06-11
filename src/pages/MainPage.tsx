@@ -9,20 +9,31 @@ import Button from "../components/UI/Button";
 import Header from "../components/Header";
 
 function MainPage() {
+  const title = "Plshchkv"
   const [hue, setHue] = useHue();
-
   const { t } = useTranslation();
   
   return (
     <div className='w-screen h-screen flex justify-center items-center'>
+      
+      <title>{title}</title>
+      <meta name="og:title" content={title}/>
+      <meta name="og:url" content="http://plshchkv.ru"/>
+      <meta name="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
+      <meta name="og:site_name" content={title}/>
+      <meta name="og:description" content={t('description')}/>
+      <meta name="author" content="Plshchkv" />
+      <meta name="keywords" content="plshchkv.ru, Сайт, Plshchkv, Плешачков, Иван, Ivan, Pleshachkov, Ivan Pleshachkov, Иван Плешачков, Prokofiev, Прокофьев, Ivan Prokofiev, Иван Прокофьев" />
+      
       <Header name="no"/>
       <div className="m-8">
         <div className="flex text-center justify-center min-w-90 max-w-160 items-center">
           <Name/>
+          
         </div>
         <Container className="mt-4 min-w-90 max-w-150">
           <p className=""><Trans i18nKey="description" components={{ 1: <strong className="text-emerald-300"/>, 2: <strong className="text-sky-300"/>, 3: <strong className="text-green-300"/>, 4: <strong className="text-amber-300"/>, 5: <strong className="text-cyan-300"/>}} /></p>
-          
+          <meta name="description" content={t('description')} />
         </Container>
         <div className="flex justify-between mt-4 flex-wrap">
           <Navigate 
