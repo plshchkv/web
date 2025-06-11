@@ -7,25 +7,19 @@ import { useHue } from '../hooks/useHue';
 import Navigate from "../components/UI/Navigate";
 import Button from "../components/UI/Button";
 import Header from "../components/Header";
+import Meta from "../components/Meta";
 
 function MainPage() {
-  const title = "Plshchkv"
   const [hue, setHue] = useHue();
   const { t } = useTranslation();
   
   return (
     <div className='w-screen h-screen flex justify-center items-center'>
       
-      <title>{title}</title>
-      <meta property="og:title" content={title} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="http://plshchkv.ru" />
-      <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg" />
-      <meta property="og:site_name" content={title} />
-      <meta property="og:description" content={t('description')} />
-      <meta name="author" content="Plshchkv" />
-      <meta name="keywords" content="plshchkv.ru, Сайт, Plshchkv, Плешачков, Иван, Ivan, Pleshachkov, Ivan Pleshachkov, Иван Плешачков, Prokofiev, Прокофьев, Ivan Prokofiev, Иван Прокофьев" />
-
+      <Meta 
+        title=""
+        description={t('description')}
+      />
       
       <Header name="no"/>
       <div className="m-8">

@@ -3,11 +3,18 @@ import Header from "../components/Header"
 import { useTranslation } from 'react-i18next';
 import Navigate from "../components/UI/Navigate";
 import Button from "../components/UI/Button";
+import Meta from "../components/Meta";
 
 function NotFound() {
     const { t } = useTranslation();
     return(
     <div className="w-screen h-screen flex items-center justify-center">
+        <Meta 
+          title="404"
+          description={t('notfound')} 
+          iconPrefix="material-icon-theme"
+          iconName="folder-error-open"
+        />
         <Header/>
         <Container className="flex flex-col items-center justify-center w-auto h-auto">
           <h1 className="text-4xl">404</h1>
