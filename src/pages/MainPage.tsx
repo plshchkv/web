@@ -17,13 +17,15 @@ function MainPage() {
     <div className='w-screen h-screen flex justify-center items-center'>
       
       <title>{title}</title>
-      <meta name="og:title" content={title}/>
-      <meta name="og:url" content="http://plshchkv.ru"/>
-      <meta name="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
-      <meta name="og:site_name" content={title}/>
-      <meta name="og:description" content={t('description')}/>
+      <meta property="og:title" content={title} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="http://plshchkv.ru" />
+      <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg" />
+      <meta property="og:site_name" content={title} />
+      <meta property="og:description" content={t('description')} />
       <meta name="author" content="Plshchkv" />
       <meta name="keywords" content="plshchkv.ru, Сайт, Plshchkv, Плешачков, Иван, Ivan, Pleshachkov, Ivan Pleshachkov, Иван Плешачков, Prokofiev, Прокофьев, Ivan Prokofiev, Иван Прокофьев" />
+
       
       <Header name="no"/>
       <div className="m-8">
