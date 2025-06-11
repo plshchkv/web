@@ -1,7 +1,7 @@
 function Name() {
     return(
         <div>
-            <h1 style={{fontSize: '4em', textAlign: 'center' }} className="">plshchkv</h1>
+            <h1 className="text-7xl max-sm:text-6xl">plshchkv</h1>
         </div>
     )
 }
