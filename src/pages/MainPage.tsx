@@ -1,6 +1,6 @@
 import Name from "../components/UI/Name";
 import Container from "../components/UI/Container";
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import Dropdown from "../components/UI/Dropdown";
 import HueAdjuster from "../components/HueAdjuster";
 import { useHue } from '../hooks/useHue';
@@ -21,7 +21,7 @@ function MainPage() {
           <Name/>
         </div>
         <Container className="mt-4 min-w-90 max-w-150">
-          <p className="flex justify-center">{t('description')}</p>
+          <p className=""><Trans i18nKey="description" components={{ 1: <strong className="text-emerald-300"/>, 2: <strong className="text-sky-300"/>, 3: <strong className="text-green-300"/>, 4: <strong className="text-amber-300"/>, 5: <strong className="text-cyan-300"/>}} /></p>
           
         </Container>
         <div className="flex justify-between mt-4 flex-wrap">
