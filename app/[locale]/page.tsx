@@ -7,6 +7,16 @@ import HueColorChanger from "@/components/HueColorChanger";
 import ApplyStoredColor from "@/components/ApplyStoredColor";
 import LightnessColorChanger from "@/components/LightnessColorChanger"
 import {useTranslations} from 'next-intl';
+import {getTranslations} from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: { locale: string } }) {
+  const {locale} = params;
+  const t = await getTranslations({locale, namespace: 'Metadata'});
+ 
+  return {
+    title: t('title')
+  };
+}
 
 export default function Home() {
   const t = useTranslations('HomePage');

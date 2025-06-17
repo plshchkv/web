@@ -4,7 +4,10 @@
         "changecolor": "Change color",
         "changelightness": "Change brightness"
     },
-        "Title": {
+    "Title": {
         "name": "plshqkv"
+    },
+    "Metadata": {
+        "title": "plshqkv"
     }
 }
