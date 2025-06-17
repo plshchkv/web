@@ -23,7 +23,8 @@
 }
 
 ::selection {
-  background-color: #0000002d;
+  background-color: #ffffff2a;
+  color: var(--c-text-dark);
 }
 
 * {
