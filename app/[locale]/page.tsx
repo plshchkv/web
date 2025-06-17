@@ -6,8 +6,10 @@ import Button from "@/components/UI/Button";
 import HueColorChanger from "@/components/HueColorChanger";
 import ApplyStoredColor from "@/components/ApplyStoredColor";
 import LightnessColorChanger from "@/components/LightnessColorChanger"
+import {useTranslations} from 'next-intl';
 
 export default function Home() {
+  const t = useTranslations('HomePage');
   return (
     <div className='w-screen h-screen flex justify-center items-center'>  
       <ApplyStoredColor/>
@@ -17,18 +19,18 @@ export default function Home() {
           <Title/>
         </div>
         <Container className="mt-4 min-w-90 max-w-150">
-          <p className="">Веб-разработчик с глубоким пониманием современных технологий, таких как Vue.js, React, Nuxt.js, HTML и CSS. Мой опыт позволяет мне создавать интерактивные, производительные и отзывчивые веб-приложения, соответствующие лучшим практикам индустрии.</p>
+          <p className="">{t('description')}</p>
         </Container>
         <div className="flex justify-between mt-4 flex-wrap">
           <Dropdown
               align="center"
-              trigger={<Button text="Изменить цвет" icon=""/>}
+              trigger={<Button text={t('changecolor')} icon=""/>}
           >
             <HueColorChanger/>
           </Dropdown>
           <Dropdown
               align="center"
-              trigger={<Button text="Изменить яркость" icon=""/>}
+              trigger={<Button text={t('changelightness')} icon=""/>}
           >
             <LightnessColorChanger/>
           </Dropdown>

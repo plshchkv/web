@@ -1,7 +1,7 @@
-import Container from "../components/UI/Container"
-import Header from "../components/Header"
-import Navigate from "../components/UI/Navigate";
-import Button from "../components/UI/Button";
+import Container from "@/components/UI/Container"
+import Header from "@/components/Header"
+import Navigate from "@/components/UI/Navigate";
+import Button from "@/components/UI/Button";
 
 function NotFound() {
     return(
