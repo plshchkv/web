@@ -4,10 +4,14 @@
         "changecolor": "Change color",
         "changelightness": "Change brightness"
     },
+    "NotFoundPage": {
+        "text": "There is nothing",
+        "back": "Back"
+    },
     "Title": {
-        "name": "plshqkv"
+        "name": "plshchkv"
     },
     "Metadata": {
-        "title": "plshqkv"
+        "title": "plshchkv"
     }
 }

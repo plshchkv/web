@@ -4,10 +4,14 @@
         "changecolor": "Изменить цвет",
         "changelightness": "Изменить яркость"
     },
+    "NotFoundPage": {
+        "text": "Ниче нет",
+        "back": "Назад"
+    },
     "Title": {
-        "name": "плшчкв"
+        "name": "plshchkv"
     },
     "Metadata": {
-        "title": "плшчкв"
+        "title": "plshchkv"
     }
 }
