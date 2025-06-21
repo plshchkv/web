@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface DropdownProps {
   trigger: ReactNode;
   children: ReactNode;
+  className?: string;
   dropdownClassName?: string;
   align?: 'start' | 'end' | 'center';
   position?: 'left' | 'right' | 'top' | 'bottom';
@@ -15,6 +16,7 @@ interface DropdownProps {
 const Dropdown: React.FC<DropdownProps> = ({
   trigger,
   children,
+  className,
   dropdownClassName = '',
   align = 'center',
   position = 'bottom',
@@ -46,7 +48,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div onClick={handleClick} className="cursor-pointer">
+      <div onClick={handleClick} className={`cursor-pointer ${className}`}>
         {trigger}
       </div>
 
