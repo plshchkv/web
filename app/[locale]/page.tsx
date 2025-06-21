@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Dropdown from "@/components/UI/Dropdown";
 import Button from "@/components/UI/Button";
 import HueColorChanger from "@/components/HueColorChanger";
-import ApplyStoredColor from "@/components/ApplyStoredColor";
 import LightnessColorChanger from "@/components/LightnessColorChanger"
 import {useTranslations} from 'next-intl';
 import {getTranslations} from 'next-intl/server';
@@ -22,7 +21,6 @@ export default function Home() {
   const t = useTranslations('HomePage');
   return (
     <div className='w-screen h-screen flex justify-center items-center'>  
-      <ApplyStoredColor/>
       <Header name="no"/>
       <div className="m-8">
         <div className="flex text-center justify-center min-w-90 max-w-160 items-center">
