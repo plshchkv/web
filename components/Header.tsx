@@ -4,6 +4,7 @@ import Button from "@/components/UI/Button";
 import Navigate from "./UI/Navigate";
 import HueColorChanger from "./HueColorChanger";
 import LightnessColorChanger from "./LightnessColorChanger";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { usePathname } from "next/navigation";
 
 interface HeaderProps {
@@ -15,7 +16,7 @@ function Header({name = "yes"}: HeaderProps) {
 
     return(
         <div className="absolute top-0 w-3/4 max-xl:w-4/4 justify-between h-12 flex items-center pl-8 pr-8 pt-2">
-            <div className="flex">
+            <div className="flex w-10">
                 <Dropdown
                     className="mr-2"
                     align="start"
@@ -24,18 +25,20 @@ function Header({name = "yes"}: HeaderProps) {
                     <HueColorChanger/>
                 </Dropdown>
                 <Dropdown
+                    className="mr-2"
                     align="start"
                     trigger={<Button icon="tabler:sun-filled"/>}
                     >
                     <LightnessColorChanger/>
                 </Dropdown>
+                <LanguageSwitcher/>
             </div>
-            <div className={`flex`}>
+            <div className={`flex `}>
                 <Navigate to="/" trigger={<h1 className={`cursor-pointer ${getName(name)}`}>plshchkv</h1>}/>
                 <h1 className={`mr-1 ml-1 ${getName(name)}`}>|</h1>
                 <h1 className={`${getName(name)}`}>{cleanPathname}</h1>
             </div>
-            <div className="flex">
+            <div className="flex w-10">
                 <Dropdown triggerEvent="hover" align="end" trigger={<Navigate open="https://github.com/plshchkv" trigger={<Button className="mr-2" icon="mingcute:github-fill"/>}/>}>
                     <p className="text-xs">Github</p>
                 </Dropdown>
