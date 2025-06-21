@@ -5,35 +5,36 @@ import Navigate from "./UI/Navigate";
 import HueColorChanger from "./HueColorChanger";
 import LightnessColorChanger from "./LightnessColorChanger";
 import { usePathname } from "next/navigation";
+import { get } from "http";
 
 interface HeaderProps {
     name?: "yes" | "no";
 }
 
 function Header({name = "yes"}: HeaderProps) {
-    const pathname = usePathname().replace(/\/(ru|en)\//, '')
+    const cleanPathname = usePathname().replace(/^\/(ru|en)(\/|$)/, '');
+
     return(
         <div className="absolute top-0 w-3/4 max-xl:w-4/4 justify-between h-12 flex items-center pl-8 pr-8 pt-2">
             <div className="flex">
                 <Dropdown
+                    className="mr-2"
                     align="start"
                     trigger={<Button icon="mdi:color"/>}
                     >
                     <HueColorChanger/>
                 </Dropdown>
-                <div className="ml-2">
-                    <Dropdown
+                <Dropdown
                     align="start"
                     trigger={<Button icon="tabler:sun-filled"/>}
                     >
                     <LightnessColorChanger/>
-                    </Dropdown>
-                </div>
+                </Dropdown>
             </div>
-            <div className={`flex ${getName(name)}`}>
+            <div className={`flex`}>
                 <Navigate to="/" trigger={<h1 className={`cursor-pointer ${getName(name)}`}>plshchkv</h1>}/>
-                <h1 className="mr-1 ml-1">|</h1>
-                <h1>{pathname}</h1>
+                <h1 className={`mr-1 ml-1 ${getName(name)}`}>|</h1>
+                <h1 className={`${getName(name)}`}>{cleanPathname}</h1>
             </div>
             <div className="flex">
                 <Dropdown triggerEvent="hover" align="end" trigger={<Navigate open="https://github.com/plshchkv" trigger={<Button className="mr-2" icon="mingcute:github-fill"/>}/>}>
