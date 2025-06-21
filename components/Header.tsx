@@ -5,7 +5,6 @@ import Navigate from "./UI/Navigate";
 import HueColorChanger from "./HueColorChanger";
 import LightnessColorChanger from "./LightnessColorChanger";
 import { usePathname } from "next/navigation";
-import { get } from "http";
 
 interface HeaderProps {
     name?: "yes" | "no";

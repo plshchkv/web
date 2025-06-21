@@ -1,6 +1,5 @@
 import ApplyStoredColor from "@/components/ApplyStoredColor";
 import Header from "@/components/Header";
-import {useTranslations} from 'next-intl';
 import {getTranslations} from 'next-intl/server';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -13,7 +12,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default function Music() {
-  const t = useTranslations('HomePage');
   return (
     <div className='w-screen h-screen flex justify-center items-center'>  
       <ApplyStoredColor/>
