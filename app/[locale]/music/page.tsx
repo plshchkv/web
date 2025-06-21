@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function Home() {
+export default function Music() {
   const t = useTranslations('HomePage');
   return (
     <div className='w-screen h-screen flex justify-center items-center'>  
