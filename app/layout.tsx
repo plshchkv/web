@@ -20,7 +20,7 @@ export default async function LocaleLayout({
   // Ensure that the incoming `locale` is valid
   const {locale} = await params; 
   return (
-    <html lang={locale}>
+    <html lang="ru">
       <body>
         <ColorSettingsProvider>      
           <NextIntlClientProvider>
