@@ -11,7 +11,7 @@ interface HeaderProps {
 }
 
 function Header({name = "yes"}: HeaderProps) {
-    const pathname = usePathname().replace(/^\/(ru|en)/, '')
+    const pathname = usePathname().replace(/\/(ru|en)\//, '')
     return(
         <div className="absolute top-0 w-3/4 max-xl:w-4/4 justify-between h-12 flex items-center pl-8 pr-8 pt-2">
             <div className="flex">
@@ -32,6 +32,7 @@ function Header({name = "yes"}: HeaderProps) {
             </div>
             <div className={`flex ${getName(name)}`}>
                 <Navigate to="/" trigger={<h1 className={`cursor-pointer ${getName(name)}`}>plshchkv</h1>}/>
+                <h1 className="mr-1 ml-1">|</h1>
                 <h1>{pathname}</h1>
             </div>
             <div className="flex">
