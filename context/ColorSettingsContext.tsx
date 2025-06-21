@@ -17,7 +17,6 @@ export function ColorSettingsProvider({ children }: { children: ReactNode }) {
   const [hue, setHue] = useState(120);
   const [lightness, setLightness] = useState(21);
 
-  // Чтение localStorage при первой загрузке
   useEffect(() => {
     if (typeof window === 'undefined') return;
     try {
@@ -32,7 +31,6 @@ export function ColorSettingsProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Применение и сохранение при изменениях
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
