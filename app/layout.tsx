@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ColorSettingsProvider } from '@/context/ColorSettingsContext';
 import {NextIntlClientProvider} from 'next-intl';
+import { ColorSettingsProvider } from '@/context/ColorSettingsContext';
 
 export const metadata: Metadata = {
   title: "plshchkv"
@@ -10,13 +9,17 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
+  params
 }: {
   children: React.ReactNode;
+  params: Promise<{locale: string}>;
 }) {
+  const {locale} = await params;
+ 
   return (
-    <html lang="ru">
+    <html lang={locale}>
       <body>
-        <ColorSettingsProvider>      
+        <ColorSettingsProvider>
           <NextIntlClientProvider>
             {children}
           </NextIntlClientProvider>
