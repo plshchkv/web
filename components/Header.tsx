@@ -13,33 +13,65 @@ interface HeaderProps {
 
 function Header({name = "yes"}: HeaderProps) {
     const cleanPathname = usePathname().replace(/^\/(ru|en)(\/|$)/, '');
+    const showText = name !== "no";
 
     return(
-        <div className="absolute top-0 w-3/4 max-xl:w-4/4 justify-between h-12 flex items-center pl-8 pr-8 pt-2">
-            <div className="flex w-10">
-                <Dropdown
-                    className="mr-2"
-                    align="start"
-                    trigger={<Button icon="mdi:color"/>}
-                    >
+        <div
+            className={`
+                absolute top-0 w-3/4 max-xl:w-4/4
+                h-12 pl-8 pr-8 pt-2
+                grid items-center justify-between
+                ${showText 
+                    ? "grid-cols-3 max-sm:grid-cols-2 max-sm:grid-rows-2" 
+                    : "grid-cols-2"
+                }
+                max-sm:h-auto
+            `}
+        >
+            <div className={`flex ${!showText ? "col-span-1" : ""} max-sm:hidden`}>
+                <Dropdown className="mr-2" align="start" trigger={<Button icon="mdi:color"/>}>
                     <HueColorChanger/>
                 </Dropdown>
-                <Dropdown
-                    className="mr-2"
-                    align="start"
-                    trigger={<Button icon="tabler:sun-filled"/>}
-                    >
+                <Dropdown className="mr-2" align="start" trigger={<Button icon="tabler:sun-filled"/>}>
                     <LightnessColorChanger/>
                 </Dropdown>
                 <LanguageSwitcher/>
             </div>
-            <div className={`flex `}>
-                <Navigate to="/" trigger={<h1 className={`cursor-pointer ${getName(name)}`}>plshchkv</h1>}/>
-                <h1 className={`mr-1 ml-1 ${getName(name)}`}>|</h1>
-                <h1 className={`${getName(name)}`}>{cleanPathname}</h1>
-            </div>
-            <div className="flex w-10">
+
+            {showText && (
+                <div className="flex justify-center max-sm:hidden">
+                    <Navigate to="/" trigger={<h1 className="cursor-pointer">plshchkv</h1>}/>
+                    <h1 className="mr-1 ml-1">|</h1>
+                    <h1>{cleanPathname}</h1>
+                </div>
+            )}
+
+            <div className={`flex justify-end ${!showText ? "col-span-1" : ""} max-sm:hidden`}>
                 <Dropdown triggerEvent="hover" align="end" trigger={<Navigate open="https://github.com/plshchkv" trigger={<Button className="mr-2" icon="mingcute:github-fill"/>}/>}>
+                    <p className="text-xs">Github</p>
+                </Dropdown>
+                <Dropdown triggerEvent="hover" align="end" trigger={<Navigate open="https://t.me/plshchkvv" trigger={<Button icon="mingcute:telegram-fill"/>}/>}>
+                    <p className="text-xs">Telegram</p>
+                </Dropdown>
+            </div>
+            
+            {showText && (
+                <div className="hidden max-sm:flex max-sm:col-span-2 max-sm:row-start-1 max-sm:justify-center max-sm:mt-1">
+                    <Navigate to="/" trigger={<h1 className="cursor-pointer">plshchkv</h1>}/>
+                    <h1 className="mr-1 ml-1">|</h1>
+                    <h1>{cleanPathname}</h1>
+                </div>
+            )}
+
+            <div className={`mt-1 hidden max-sm:flex max-sm:col-span-2 ${showText ? "max-sm:row-start-2" : "max-sm:row-start-1"} max-sm:justify-center max-sm:gap-2`}>
+                <Dropdown align="start" trigger={<Button icon="mdi:color"/>}>
+                    <HueColorChanger/>
+                </Dropdown>
+                <Dropdown align="start" trigger={<Button icon="tabler:sun-filled"/>}>
+                    <LightnessColorChanger/>
+                </Dropdown>
+                <LanguageSwitcher/>
+                <Dropdown triggerEvent="hover" align="end" trigger={<Navigate open="https://github.com/plshchkv" trigger={<Button icon="mingcute:github-fill"/>}/>}>
                     <p className="text-xs">Github</p>
                 </Dropdown>
                 <Dropdown triggerEvent="hover" align="end" trigger={<Navigate open="https://t.me/plshchkvv" trigger={<Button icon="mingcute:telegram-fill"/>}/>}>
@@ -48,14 +80,6 @@ function Header({name = "yes"}: HeaderProps) {
             </div>
         </div>
     )
-}
-function getName(name: "yes" | "no") {
-  switch (name) {
-    case 'no':
-      return 'absolute opacity-0';
-    default:
-      return '';
-  }
 }
 
 export default Header
