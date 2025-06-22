@@ -27,7 +27,6 @@ export default function LanguageSwitcher() {
             dropdownClassName="flex-col flex"
         >
             <div className="border-current">
-                <p className="text-xs">{t('language')}</p>
                 {locales.map((locale) => (
                     <button
                         className="cursor-pointer p-0.5 text-sm flex justify-center items-center"
