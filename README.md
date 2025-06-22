@@ -1,4 +1,4 @@
-# # <img src="https://plshchkv.ru/PL.svg" width="32" style="vertical-align:middle; margin-right:2px;" /> nextweb
+# # <img src="https://plshchkv.ru/favicon.ico" width="32" style="vertical-align:middle; margin-right:2px;" /> nextweb
 
 Это современное приложение на [Next.js](https://nextjs.org), использующее React, TypeScript, Tailwind CSS и кастомные хуки/контекст для управления цветовой схемой сайта.
 
@@ -30,6 +30,62 @@
 
 - **Интеграция с внешними сервисами**:  
   Ссылки на Github и Telegram реализованы через [`Header`](components/Header.tsx) и [`Dropdown`](components/UI/Dropdown.tsx).
+
+## Описание компонентов и функций
+
+### Контекст и хуки
+
+- **[`context/ColorSettingsContext.tsx`](context/ColorSettingsContext.tsx)**  
+  Контекст для управления цветовой схемой сайта (оттенок и светлота).  
+  - `ColorSettingsProvider` — провайдер, который хранит значения hue и lightness, синхронизирует их с localStorage и CSS-переменными.
+  - `useColorSettings` — хук для доступа к значениям hue/lightness и их изменению из любого компонента.
+
+- **[`hooks/useColorSettings.ts`](hooks/useColorSettings.ts)**  
+  Хук для работы с настройками цвета вне контекста.  
+  - Позволяет получить и изменить hue/lightness, синхронизирует их с localStorage и CSS.
+
+### UI-компоненты
+
+- **[`components/UI/Button.tsx`](components/UI/Button.tsx)**  
+  Универсальная кнопка с поддержкой иконок, текста и кастомных классов.
+
+- **[`components/UI/Dropdown.tsx`](components/UI/Dropdown.tsx)**  
+  Выпадающее меню с анимацией, поддержкой разных триггеров (клик/hover), позиционированием и выравниванием.
+
+- **[`components/UI/Container.tsx`](components/UI/Container.tsx)**  
+  Контейнер с фоном, скруглениями и адаптивной версткой для обертки контента.
+
+- **[`components/UI/Navigate.tsx`](components/UI/Navigate.tsx)**  
+  Обертка для ссылок. Позволяет открывать как внутренние, так и внешние ссылки (с target="_blank" и rel).
+
+### Основные компоненты
+
+- **[`components/Header.tsx`](components/Header.tsx)**  
+  Шапка сайта с навигацией, переключателями цвета, языков и ссылками на соцсети.
+
+- **[`components/Title.tsx`](components/Title.tsx)**  
+  Заголовок главной страницы с поддержкой локализации.
+
+- **[`components/HueColorChanger.tsx`](components/HueColorChanger.tsx)**  
+  Слайдер для изменения оттенка основной цветовой схемы.
+
+- **[`components/LightnessColorChanger.tsx`](components/LightnessColorChanger.tsx)**  
+  Слайдер для изменения светлоты основной цветовой схемы.
+
+- **[`components/LanguageSwitcher.tsx`](components/LanguageSwitcher.tsx)**  
+  Переключатель языка интерфейса с выпадающим меню.
+
+### Пример работы ColorSettingsContext
+
+- При изменении hue или lightness через слайдеры, значения сохраняются в localStorage и применляются к CSS-переменным (`--c-primary`).
+- При загрузке страницы значения автоматически подтягиваются из localStorage.
+
+### Пример работы LanguageSwitcher
+
+- Определяет текущий язык из URL.
+- Позволяет переключить язык, изменяя часть пути (`/ru/`, `/en/`).
+
+---
 
 ## Быстрый старт
 
@@ -69,4 +125,4 @@ npm run lint
 
 ---
 
-**Структура и компоненты проекта подробно описаны выше. Для изменений интерфейса и логики используйте соответствующие файлы в [components/](components/) и
+**Каждая функция и компонент подробно описаны выше. Для изменений интерфейса и логики используйте соответствующие файлы в [components/](components/), [context/](context/) и [hooks/](hooks/).**
