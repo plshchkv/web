@@ -4,7 +4,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import Dropdown from "./UI/Dropdown";
 import Button from "./UI/Button";
-import { useTranslations } from "next-intl";
 
 const locales = ["ru", "en"];
 
@@ -19,7 +18,6 @@ export default function LanguageSwitcher() {
     const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
     router.push(newPath);
   };
-  const t = useTranslations('Misc')
   return (
     <div>
         <Dropdown
