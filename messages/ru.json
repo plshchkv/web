@@ -8,6 +8,11 @@
         "text": "Ниче нет",
         "back": "Назад"
     },
+    "Header": {
+        "changecolor": "Изменить цвет",
+        "changelightness": "Изменить яркость",
+        "changelanguage": "Сменить язык"
+    },
     "Title": {
         "name": "plshchkv"
     },

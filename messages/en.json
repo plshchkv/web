@@ -8,6 +8,11 @@
         "text": "There is nothing",
         "back": "Back"
     },
+    "Header": {
+        "changecolor": "Change color",
+        "changelightness": "Change brightness",
+        "changelanguage": "Switch language"
+    },
     "Title": {
         "name": "plshchkv"
     },
