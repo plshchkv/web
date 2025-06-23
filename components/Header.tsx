@@ -56,14 +56,14 @@ function Header({name = "yes"}: HeaderProps) {
             </div>
             
             {showText && (
-                <div className="hidden max-sm:flex max-sm:col-span-2 max-sm:row-start-1 max-sm:justify-center max-sm:mt-1">
+                <div className="hidden backdrop-blur-sm p-1 mb-1 bg-(--c-secondary) rounded-3xl border border-[#ffffff0b] max-sm:flex max-sm:col-span-2 max-sm:row-start-1 max-sm:justify-center max-sm:mt-1">
                     <Navigate to="/" trigger={<h1 className="cursor-pointer">plshchkv</h1>}/>
                     <h1 className="mr-1 ml-1">|</h1>
                     <h1>{cleanPathname}</h1>
                 </div>
             )}
 
-            <div className={`mt-1 hidden max-sm:flex max-sm:col-span-2 ${showText ? "max-sm:row-start-2" : "max-sm:row-start-1"} max-sm:justify-center max-sm:gap-2`}>
+            <div className={`mt-1 hidden max-sm:flex max-sm:col-span-2 ${showText ? "max-sm:row-start-2" : "max-sm:row-start-1"} max-sm:justify-between max-sm:gap-2`}>
                 <Dropdown align="start" trigger={<Button icon="mdi:color"/>}>
                     <HueColorChanger/>
                 </Dropdown>
