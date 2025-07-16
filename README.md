@@ -10,8 +10,8 @@
   - UI: [UI/Button.tsx](components/UI/Button.tsx), [UI/Dropdown.tsx](components/UI/Dropdown.tsx), [UI/Container.tsx](components/UI/Container.tsx), [UI/Navigate.tsx](components/UI/Navigate.tsx)
 - **[context/ColorSettingsContext.tsx](context/ColorSettingsContext.tsx)** — контекст для управления цветовой схемой (hue, lightness) и их сохранения в localStorage.
 - **[hooks/useColorSettings.ts](hooks/useColorSettings.ts)** — хук для работы с настройками цвета вне контекста.
-- **[public/](public/)** — публичные ассеты (иконки, favicon и т.д.).
-- **[.next/](.next/)** — служебная папка Next.js (автоматически генерируется).
+- **public/** — публичные ассеты (иконки, favicon и т.д.).
+- **.next/** — служебная папка Next.js (автоматически генерируется).
 - **[package.json](package.json)** — зависимости, скрипты запуска и сборки.
 - **[tsconfig.json](tsconfig.json)** — конфигурация TypeScript.
 - **[postcss.config.mjs](postcss.config.mjs)**, **[eslint.config.mjs](eslint.config.mjs)** — конфиги для PostCSS и ESLint.
